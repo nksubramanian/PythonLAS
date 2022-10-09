@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "bc82c1da-34a9-428c-8d92-9b871bbc59e3",
+		"name": "Python",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20069959"
+	},
+	"item": [
+		{
+			"name": "home",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/subbu.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/getfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gettextfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Subramanian.N/Downloads/LASfiles/LAS Files/D-D' LAS Files/Bean/Bean_A.las"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/getfilename",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getfilename"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getwells",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Subramanian.N/Downloads/LASfiles/LAS Files/D-D' LAS Files/Bean/Bean_A.las"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/getwells",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getwells"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getdata",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Subramanian.N/Downloads/LASfiles/LAS Files/D-D' LAS Files/Bean/Bean_A.las"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/getdata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getdata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getkeys",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Subramanian.N/Downloads/LASfiles/LAS Files/D-D' LAS Files/Bean/Bean_A.las"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/getkeys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getkeys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,6 +1,6 @@
 import os
 import io
-
+import pandas as pd
 from flask import Flask, render_template, request
 import random
 import lasio as lasio
@@ -44,13 +44,28 @@ def getwells():
     return str(las.well)
 
 
-@app.route("/upload", methods = ['POST'])
-def upload():
+@app.route("/getdata", methods = ['POST'])
+def getdata():
     file = request.files['file']
     stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
     filename = file.filename
     las = lasio.read(stream)
-    return str(las.well)
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.width', None)
+    pd.set_option('display.max_colwidth', -1)
+    df = las.df()
+    return str(df)
+
+
+
+@app.route("/getkeys", methods = ['POST'])
+def getkeys():
+    file = request.files['file']
+    stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
+    filename = file.filename
+    las = lasio.read(stream)
+    return str(las.keys())
 
 
 
