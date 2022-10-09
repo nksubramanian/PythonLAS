@@ -1,4 +1,5 @@
 import os
+import io
 
 from flask import Flask, render_template, request
 import random
@@ -47,8 +48,14 @@ def getwells():
 
 @app.route("/upload", methods = ['POST'])
 def upload():
+    print("0")
     file = request.files['file']
+    print("1")
+    stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
+    print("2")
     filename = file.filename
+    print("3")
+    las = lasio.read(stream)
     print(filename)
     file.save(file.filename)
     print(os.path)
