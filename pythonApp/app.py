@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import random
 
 app = Flask(__name__)
@@ -23,6 +23,12 @@ images = [
 def index():
     url = random.choice(images)
     return render_template('index.html', url=url)
+
+@app.route("/getfile", methods=["POST"])
+def getfile():
+    file = request.files['file']
+    return file.read()
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
