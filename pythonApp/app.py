@@ -38,28 +38,19 @@ def getfile():
 @app.route("/getwells", methods=["GET"])
 def getwells():
     file = request.files['file']
-    file.save(secure_filename(file.filename))
+    stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
     filename = file.filename
-    file_name = request.form[filename]
-    with open(file_name, 'r') as f:
-        file_content = f.read()
-    return file_content
+    las = lasio.read(stream)
+    return str(las.well)
 
 
 @app.route("/upload", methods = ['POST'])
 def upload():
-    print("0")
     file = request.files['file']
-    print("1")
     stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
-    print("2")
     filename = file.filename
-    print("3")
     las = lasio.read(stream)
-    print(filename)
-    file.save(file.filename)
-    print(os.path)
-    return filename
+    return str(las.well)
 
 
 
