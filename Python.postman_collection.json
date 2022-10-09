@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "bc82c1da-34a9-428c-8d92-9b871bbc59e3",
+		"name": "Python",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20069959"
+	},
+	"item": [
+		{
+			"name": "gettextfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/subbu.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/getfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getfile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
