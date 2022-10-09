@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import random
+import lasio as lasio
 
 app = Flask(__name__)
 
@@ -28,6 +29,20 @@ def index():
 def getfile():
     file = request.files['file']
     return file.read()
+
+@app.route("/getwells", methods=["GET"])
+def getwells():
+    content = request.files['file'].read()
+    las = lasio.open_file(content)
+    #las = lasio.read(content)
+    return str(las.well)
+
+@app.route("/getfilename", methods=["POST"])
+def getfilename():
+    file = request.files['file']
+    #with open(file_name, 'r') as f:
+    #    file_content = f.read()
+    return str(file.filename)
 
 
 if __name__ == "__main__":
