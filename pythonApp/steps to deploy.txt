@@ -1,0 +1,7 @@
+az login
+az group create --name NachiFunctionTest-rg --location westeurope
+az acr create --resource-group NachiFunctionTest-rg --name nachicontainerregistry --sku Basic --admin-enabled true
+az acr credential show --name nachicontainerregistry
+docker login nachicontainerregistry.azurecr.io -u nachicontainerregistry
+docker build -f DataProviderService\Sperry.MxA.DataProvider.Functions\Dockerfile -t nachicontainerregistry.azurecr.io/samplefunctions/tad:1 .
+docker push nachicontainerregistry.azurecr.io/samplefunctions/tad:1
